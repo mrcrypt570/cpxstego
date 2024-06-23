@@ -2,6 +2,8 @@
 hides a short string in the red channel of an image, creating a PNG called new.png
 reads JPG, BMP, PNG and others
 
+The maximum string size for now is 32 characters
+
 ######## WORK IN PROGRESS ########
 
 usage: picap [-h] [-d DECRYPT] [-e ENCRYPT] [-m MESSAGE]
