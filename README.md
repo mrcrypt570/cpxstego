@@ -14,11 +14,8 @@ options:
   -e ENCRYPT, --encrypt ENCRYPT
   -m MESSAGE, --message MESSAGE
 
-ENCRYPT /n
-python3 picap.py -e cover.jpg -m "secret"
+ENCRYPT:python3 picap.py -e cover.jpg -m "secret"
 
-DECRYPT
-python3 picap.py -d new.png
+DECRYPT: python3 picap.py -d new.png
 
-BOTH
-python3 picap.py -e cover.jpg -m "secret" -d new.png
+BOTH: python3 picap.py -e cover.jpg -m "secret" -d new.png
