@@ -5,8 +5,8 @@ reads JPG, BMP, PNG and others. once i grok lossy compression better, options to
 
 records the length of the message in the color data of the first pixel,
 so if you don't want to leave a clue with some strange color in the first pixel,
-encode your message in an image whose first pizel is close to the color that will
-be the same color as the value this script will set for said message length.
+encode your message in an image whose first pixel is close to the value this
+script will set.
 
 ######## WORK IN PROGRESS ########
 
