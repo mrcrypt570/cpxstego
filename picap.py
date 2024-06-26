@@ -8,7 +8,7 @@ def str2bin(message):
     return binary[2:]
 
 def bin2str(binary):
-    message = t.unhexlify('%x' % (int('0b' + binary, 2)))
+    message = t.unhexlify('%x' % (int(binary, 2)))
     return message
 
 def main(choice, imgfn, message):
@@ -19,7 +19,7 @@ def main(choice, imgfn, message):
     if(choice == "e" and message != ''):
         bytearray = message.encode('ascii')
         messagebinary = str2bin(bytearray)
-        if(len(messagebinary) > 255): # using 255 until i can figure out why it's not working > 255 (765 MAX)
+        if(len(messagebinary) > 765):
             print("message is too long - please try again")
         else:
             hideMe(img1, messagebinary, size)
@@ -44,6 +44,7 @@ def hideMe(img, msg, size):
         else:
             cpxlist[1] = msglen
             cpxlist[2] = 0
+        msglen = len(msg)
     else:
         cpxlist = [msglen, 0, 0]
     newcpx = tuple(cpxlist)
@@ -69,8 +70,6 @@ def hideMe(img, msg, size):
                     count+=1 # increment msg char count
                 newpx = tuple(pxlist)
                 data[x,y] = newpx
-            #else:
-                #print('first pixel>>> ' + str(data[x,y]))
     print('saving')
     new.save('new.png')
     new.show()
@@ -78,9 +77,8 @@ def hideMe(img, msg, size):
 
 def showMe(img, size):
     print('showing...')
-    fpx = list(img[0,0])
+    fpx = list(img[0,0]) # first pixel
     mlen = int(fpx[0] + fpx[1] + fpx[2])
-    #print('decode mlen = ' + str(mlen))
     count = 0
     dmsg = ''
     for x in range(int(size[0])): #width
@@ -92,10 +90,8 @@ def showMe(img, size):
                 binstr = str(binary) # R binary to string
                 #decode here
                 bslist = list(binstr)
-                #print(bslist)
                 dmsg += bslist[-1]
                 count+=1
-    #print(dmsg)
     secret = bin2str(dmsg).decode('ascii', 'replace')
     print(secret)
 
