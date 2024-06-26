@@ -1,7 +1,7 @@
 # picap
-hides a short string (95 characters) in the red channel of an image (LSB), creating a PNG called "new.png"
-reads JPG, BMP, PNG and others
-once i grok lossy compression better, options to save as JPG will be added
+hides a short string (95 characters) in the red channel of an image (LSB), creating a PNG called "new.png".
+
+reads JPG, BMP, PNG and others. once i grok lossy compression better, options to save as JPG will be added.
 
 records the length of the message in the color data of the first pixel,
 so if you don't want to leave a clue with some strange color in the first pixel,
