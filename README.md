@@ -1,8 +1,12 @@
 # picap
-hides a short string in the red channel of an image, creating a PNG called new.png
+hides a short string (95 characters) in the red channel of an image (LSB), creating a PNG called "new.png"
 reads JPG, BMP, PNG and others
+once i grok lossy compression better, options to save as JPG will be added
 
-The maximum string size for now is 32 characters
+records the length of the message in the color data of the first pixel,
+so if you don't want to leave a clue with some strange color in the first pixel,
+encode your message in an image whose first pizel is close to the color that will
+be the same color as the value this script will set for said message length.
 
 ######## WORK IN PROGRESS ########
 
