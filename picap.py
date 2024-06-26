@@ -44,7 +44,6 @@ def hideMe(img, msg, size):
         else:
             cpxlist[1] = msglen
             cpxlist[2] = 0
-        #msglen = len(msg)
     else:
         cpxlist = [msglen, 0, 0]
     newcpx = tuple(cpxlist)
