@@ -15,10 +15,16 @@ usage: picap [-h] [-d DECRYPT] [-e ENCRYPT] [-m MESSAGE]
 hides a short string in the red channel of an image
 
 options:
+
   -h, --help            show this help message and exit
+  
   -d DECRYPT, --decrypt DECRYPT
+  
   -e ENCRYPT, --encrypt ENCRYPT
+  
   -m MESSAGE, --message MESSAGE
+
+Examples...
 
 ENCRYPT: python3 picap.py -e cover.jpg -m "secret"
 
