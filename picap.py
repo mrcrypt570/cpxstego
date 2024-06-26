@@ -44,7 +44,7 @@ def hideMe(img, msg, size):
         else:
             cpxlist[1] = msglen
             cpxlist[2] = 0
-        msglen = len(msg)
+        #msglen = len(msg)
     else:
         cpxlist = [msglen, 0, 0]
     newcpx = tuple(cpxlist)
@@ -61,7 +61,7 @@ def hideMe(img, msg, size):
                 binary = bin(int(pxlist[0])) # get binary of R
                 binstr = str(binary) # R binary to string
                 #encode here
-                if(count < msglen):
+                if(count < len(msg)):
                     bslist = list(binstr) # R binary string to list
                     bslist[-1] = str(msg[count]) # change last char to msg char at count
                     binstr = "".join(bslist) # update binstr
