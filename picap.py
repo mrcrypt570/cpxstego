@@ -13,18 +13,21 @@ def bin2str(binary):
 
 def main(choice, imgfn, message):
     image1 = Image.open(imgfn)
-    size = image1.size
-    img1 = image1.load()
-    
-    if(choice == "e" and message != ''):
-        bytearray = message.encode('ascii')
-        messagebinary = str2bin(bytearray)
-        if(len(messagebinary) > 765):
-            print("message is too long - please try again")
-        else:
-            hideMe(img1, messagebinary, size)
-    elif(choice=="d"):
-        showMe(img1, size)
+    if(image1.mode == 'RGB' or image1.mode == 'RGBA'):
+        size = image1.size
+        img1 = image1.load()
+        
+        if(choice == "e" and message != ''):
+            bytearray = message.encode('utf-8')
+            messagebinary = str2bin(bytearray)
+            if(len(messagebinary) > 765):
+                print("message is too long - please try again")
+            else:
+                hideMe(img1, messagebinary, size)
+        elif(choice=="d"):
+            showMe(img1, size)
+    else:
+        print('image must be RGB or RGBA. please use another image.')
 
 def hideMe(img, msg, size):
     print('hiding... ')
@@ -91,7 +94,7 @@ def showMe(img, size):
                 bslist = list(binstr)
                 dmsg += bslist[-1]
                 count+=1
-    secret = bin2str(dmsg).decode('ascii', 'replace')
+    secret = bin2str(dmsg).decode('utf-8', 'replace')
     print(secret)
 
 
