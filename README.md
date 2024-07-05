@@ -1,9 +1,9 @@
 # picap
 hides a short string (95 characters) in the red channel of an image (LSB), creating a PNG called "new.png".
 
-reads JPG, BMP, PNG and others - but ONLY IF THEY'RE 'RGB' or 'RGBA' color modes. 
+RGB or RGBA color mode ONLY!
 
-once i grok lossy compression better, options to save as JPG will be added.
+NO .tif with alpha channel.
 
 records the length of the message in the color data of the first pixel,
 so if you don't want to leave a clue with some strange color in the first pixel,
@@ -11,6 +11,7 @@ encode your message in an image whose first pixel is close to the value this
 script will set.
 
 ######## WORK IN PROGRESS ########
+- watch this space for improvements -
 
 usage: picap [-h] [-d DECRYPT] [-e ENCRYPT] [-m MESSAGE]
 
