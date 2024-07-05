@@ -11,7 +11,9 @@ encode your message in an image whose first pixel is close to the value this
 script will set.
 
 ######## WORK IN PROGRESS ########
-- watch this space for improvements -
+- watch this space for improvements
+##################################
+
 
 usage: picap [-h] [-d DECRYPT] [-e ENCRYPT] [-m MESSAGE]
 
