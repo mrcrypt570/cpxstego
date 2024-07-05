@@ -1,4 +1,5 @@
 from PIL import Image
+from PIL import UnidentifiedImageError
 import binascii as t
 import argparse
 
@@ -12,22 +13,26 @@ def bin2str(binary):
     return message
 
 def main(choice, imgfn, message):
-    image1 = Image.open(imgfn)
-    if(image1.mode == 'RGB' or image1.mode == 'RGBA'):
-        size = image1.size
-        img1 = image1.load()
-        
-        if(choice == "e" and message != ''):
-            bytearray = message.encode('utf-8')
-            messagebinary = str2bin(bytearray)
-            if(len(messagebinary) > 765):
-                print("message is too long - please try again")
-            else:
-                hideMe(img1, messagebinary, size)
-        elif(choice=="d"):
-            showMe(img1, size)
-    else:
-        print('image must be RGB or RGBA. please use another image.')
+    try:
+        image1 = Image.open(imgfn)
+        if(image1.mode == 'RGB' or image1.mode == 'RGBA'):
+            size = image1.size
+            img1 = image1.load()
+            
+            if(choice == "e" and message != ''):
+                bytearray = message.encode('utf-8')
+                messagebinary = str2bin(bytearray)
+                if(len(messagebinary) > 765):
+                    print("message is too long - please try again")
+                else:
+                    hideMe(img1, messagebinary, size)
+            elif(choice=="d"):
+                showMe(img1, size)
+        else:
+            print('image must be RGB or RGBA. please use another image.')
+    except UnidentifiedImageError:
+        print('Unidentified Image Error!!! If the file is .tif, make sure it has no alpha channel. Else... I dunno.')
+
 
 def hideMe(img, msg, size):
     print('hiding... ')
