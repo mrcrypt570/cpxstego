@@ -17,13 +17,16 @@ def main(choice, imgfn, message):
         image1 = Image.open(imgfn)
         if(image1.mode == 'RGB' or image1.mode == 'RGBA'):
             size = image1.size
+            sizelst = list(size)
+            mlenMAX = int(sizelst[0] * sizelst[1])
             img1 = image1.load()
-            
             if(choice == "e" and message != ''):
                 bytearray = message.encode('utf-8')
                 messagebinary = str2bin(bytearray)
                 if(len(messagebinary) > 765):
                     print("message is too long - please try again")
+                elif(mlenMAX < len(messagebinary)):
+                    print("message is too long for the image size - please try again")
                 else:
                     hideMe(img1, messagebinary, size)
             elif(choice=="d"):
