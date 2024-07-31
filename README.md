@@ -5,7 +5,7 @@ RGB or RGBA color mode ONLY!
 
 NO .tif with alpha channel.
 
-records the length of the message in the color data of the first pixel,
+records the length of the message in the color data of the first pixel,</br>
 so if you don't want to leave a clue with some strange color in the first pixel,
 encode your message in an image whose first pixel is close to the value this
 script will set.
