@@ -1,19 +1,20 @@
 # picap
-hides a short string (95 characters) in the red channel of an image (LSB), creating a PNG called "new.png".
+hides a short string in the red channel of an image (LSB), creating a PNG called "new.png".</br>
+max length is 95 characters - minimum 8
 
 RGB or RGBA color mode ONLY!
 
 NO .tif with alpha channel.
 
 records the length of the message in the color data of the first pixel,</br>
-so if you don't want to leave a clue with some strange color in the first pixel,
-encode your message in an image whose first pixel is close to the value this
-script will set.
+so if you don't want to leave a clue with some strange color in the first pixel,</br>
+encode your message in an image whose first pixel is close to the value this</br>
+script will set.</br>
 
-######## WORK IN PROGRESS ########
+######## WORK IN PROGRESS ########</br>
 - watch this space for improvements
 
-##################################
+###################################
 
 
 usage: picap [-h] [-d DECRYPT] [-e ENCRYPT] [-m MESSAGE]
