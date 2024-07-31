@@ -1,6 +1,8 @@
 # picap
-hides a short string in the red channel of an image (LSB), creating a PNG called "new.png".</br>
-max length is 95 characters - minimum 8
+hides a short string in the red channel of an image (LSB), creating a PNG called "new.png"</br>
+max length is 95 characters</br>
+min length is 1 character, but this method is also based on how big the image is</br>
+min image size is 8 pixels
 
 RGB or RGBA color mode ONLY!
 
