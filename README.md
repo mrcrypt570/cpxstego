@@ -1,19 +1,17 @@
 # picap
-hides a short string (95 characters) in the red channel of an image (LSB), creating a PNG called "new.png".
-
-RGB or RGBA color mode ONLY!
-
-NO .tif with alpha channel.
-
-records the length of the message in the color data of the first pixel,
-so if you don't want to leave a clue with some strange color in the first pixel,
-encode your message in an image whose first pixel is close to the value this
-script will set.
-
-######## WORK IN PROGRESS ########
-- watch this space for improvements
-
-##################################
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+	<head>
+		<title>_mrcrypt</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+		html, body { background-color: #98ff98; font-family:'Courier New', Courier, monospace}
+		</style>
+	</head>
+	<body>
+        <b>_mrcrypt | site forever under construction</b></br>
+        
+	</body>
+</html>
 
 
 usage: picap [-h] [-d DECRYPT] [-e ENCRYPT] [-m MESSAGE]
