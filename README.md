@@ -15,7 +15,7 @@ script will set.</br>
 
 ######## WORK IN PROGRESS ########</p>
 more features will be added as i learn more (and as time permits)</br>
-this is a code-bash excerize to learn both python and LSB image steganography</br>
+this is a code-bash exercise to learn both python and LSB image steganography</br>
 the concept and (slightly different) method came from an edureka! video here:</br>
 https://youtu.be/xepNoHgNj0w?si=KPxSQbvPT3FeIXvD</br>
 and the method extrapolated from a john hammond video here:</br>
